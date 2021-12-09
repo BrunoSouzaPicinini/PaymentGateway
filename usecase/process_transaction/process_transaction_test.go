@@ -21,7 +21,7 @@ func TestProcessTransaction_ExecuteInvalidCreditCard(t *testing.T) {
 		Amount:                    200,
 	}
 
-	expectedOutput := transactionDtoOutput{
+	expectedOutput := TransactionDtoOutput{
 		ID:           "1",
 		Status:       entity.REJECTED,
 		ErrorMessage: "invalid credit card number",
@@ -53,7 +53,7 @@ func TestProcessTransaction_ExecuteRejectedTransaction(t *testing.T) {
 		Amount:                    1200,
 	}
 
-	expectedOutput := transactionDtoOutput{
+	expectedOutput := TransactionDtoOutput{
 		ID:           "1",
 		Status:       entity.REJECTED,
 		ErrorMessage: "you do not have limit for this transaction",
@@ -85,7 +85,7 @@ func TestProcessTransaction_ExecuteApprovedTransaction(t *testing.T) {
 		Amount:                    900,
 	}
 
-	expectedOutput := transactionDtoOutput{
+	expectedOutput := TransactionDtoOutput{
 		ID:           "1",
 		Status:       entity.APPROVED,
 		ErrorMessage: "",
